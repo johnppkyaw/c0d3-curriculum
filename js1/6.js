@@ -8,6 +8,15 @@
  */
 
 const solution = (num, i = 2) => {
+  num = Math.abs(num);
+  if (num === 0 || num === 1) return false;
+  while(i < num) {
+    if (num % i === 0) {
+      return false;
+    } else {
+      i++;
+    }
+  }
   return true
 }
 
