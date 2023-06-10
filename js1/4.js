@@ -9,6 +9,10 @@
  */
 
 const solution = (fun, i = 0) => {
+  while(fun(i) !== false) {
+    i++;
+  }
+  return false;
 }
 
 module.exports = {
