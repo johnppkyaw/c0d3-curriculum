@@ -8,11 +8,7 @@
  */
 
 const solution = (num, fun) => {
-  while (num > 0) {
-    fun();
-    num--;
-  }
-  return null;
+  return num <= 0 ? null : (fun(), solution(--num, fun));
 }
 
 module.exports = {
