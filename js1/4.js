@@ -9,10 +9,7 @@
  */
 
 const solution = (fun, i = 0) => {
-  while(fun(i) !== false) {
-    i++;
-  }
-  return false;
+  return fun(i) !== false ? solution(fun, ++i) : false;
 }
 
 module.exports = {
