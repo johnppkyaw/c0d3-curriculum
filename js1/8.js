@@ -8,15 +8,9 @@
  */
 
 const solution = (inp, letter, counter = 0, i = 0) => {
-  while(i < inp.length) {
-    if(inp[i] === letter) {
-      counter++;
-      i++
-    } else {
-      i++;
-    }
-  }
-  return counter;
+  if(i > inp.length) return counter;
+  if(inp[i] === letter) counter++;
+  return solution(inp, letter, counter, ++i);
 }
 
 module.exports = {
