@@ -22,10 +22,8 @@ const solution = (str, fun) => {
   return () => {
     if (i === str.length) {
       i = 0;
-      return fun(str[i++]);
-    } else {
-      return fun(str[i++]);
     }
+    return fun(str[i++]);
   }
 }
 
