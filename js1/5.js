@@ -8,7 +8,9 @@
  */
 
 const solution = (num, fun) => {
-  return num <= 0 ? null : (fun(), solution(--num, fun));
+  if (num <= 0) return null;
+  fun();
+  return solution(num - 1, fun);
 }
 
 module.exports = {
