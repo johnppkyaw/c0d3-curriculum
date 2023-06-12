@@ -9,14 +9,9 @@
  */
 
 const solution = (inp, letter, i = 0) => {
-  while(i < inp.length) {
-    if (inp[i] === letter) {
-      return true;
-    } else {
-      i++;
-    }
-  }
-  return false;
+  if (inp[i] === letter) return true;
+  if (i > inp.length) return false;
+  return solution(inp, letter, ++i);
 }
 
 module.exports = {
