@@ -8,10 +8,9 @@
  */
 
 const solution = (num, i = 2) => {
-  num = Math.abs(num);
-  if (num === 0 || num === 1 || (num !== i && num % i === 0)) return false;
   if (num === i) return true;
-  return solution(num, ++i);
+  if ((num <= 1 && num >= -1) || num % i === 0) return false;
+  return solution(num, i + 1);
 }
 
 module.exports = {
