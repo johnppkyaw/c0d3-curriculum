@@ -9,7 +9,7 @@
 
 const solution = (num, i = 2) => {
   if (num === i) return true;
-  if ((num <= 1 && num >= -1) || num % i === 0) return false;
+  if ((num <= 1) || num % i === 0) return false;
   return solution(num, i + 1);
 }
 
