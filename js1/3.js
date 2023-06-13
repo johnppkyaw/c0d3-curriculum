@@ -8,7 +8,7 @@
  */
 
 const solution = (num, str, result = '') => {
-  return ''
+  return num <= 0 ? result : solution(num - 1, str, result += str);
 }
 
 module.exports = {
