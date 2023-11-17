@@ -5,8 +5,14 @@
  */
 
 const solution = () => {
-  Array.prototype.cMap = function (cb) {
-    return 0
+  Array.prototype.cMap = function (cb, element, index = 0, array = this, newArr = []) {
+    if(array.length === index) return newArr;
+
+    element = element || array[index];
+    newArr.push(cb(element, index, array))
+    index += 1;
+
+    return this.cMap(cb, array[index], index, array, newArr);
   }
 }
 
