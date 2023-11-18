@@ -5,7 +5,14 @@
  */
 
 const solution = () => {
-  Array.prototype.cFind = function (cb) {
+  Array.prototype.cFind = function (cb, element, index = 0, arr = this) {
+    if(arr.length === index) return;
+
+    element = element || arr[index];
+    if(cb(element, index, arr) === true) return element;
+    index += 1;
+
+    return this.cFind(cb, arr[index], index, arr);
   }
 }
 
