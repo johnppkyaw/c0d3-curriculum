@@ -6,7 +6,14 @@
  * @param {number} time
  */
 
-const solution = (arr, time) => {
+const solution = (arr, time, index = 0) => {
+  if(arr.length === index) return;
+
+  setTimeout(() => {
+    const currFunc = arr[index];
+    currFunc();
+    solution(arr, time, index += 1)
+  }, time)
 }
 
 module.exports = {
